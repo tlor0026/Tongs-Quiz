@@ -10,72 +10,57 @@
 </head>
 
 <body>
+    <!--Header shows high score button and timer-->
     <header>
         <h1>Tong's Quiz</h1>
         <div>
-            <h2>Timer</h2>
+            <h2 id="time">Timer:</h2>
             <div>
     </header>
-    <Section id="fq">
-        <div class="questions">
-            <div>
-                <h2>Which is has the biggest text?</h2>
-            </div>
-            <ol id="guess">
-                <li href="right" class="btn">H1</li>
-                <li href="wrong" class="btn">H2</li>
-                <li href="wrong" class="btn">H3</li>
-            </ol>
-        </div>
-        </div>
-    </Section>
-    <Section id="sq">
-        <div class="questions">
-            <h2> What comes first in a HTML?</h2>
-        </div>
-        <div class="questions">
-            <ol id="guess">
-                <li href="wrong" class="btn">Body</li>
-                <li href="wrong" class="btn">Head</li>
-                <li href="right" class="btn">Meta Tags</li>
-            </ol>
-        </div>
-    </Section>
-    <section>
-        <div class="questions">
-            <h2>What kind of bear is best?</h2>
-            <ol id="guess">
-                <li href="right" class="btn">Black bear</li>
-                <li href="wrong" class="btn">Beets</li>
-                <li href="wrong" class="btn">Battlestar Galactica</li>
-            </ol>
-        </div>
-    </section>
-    <section>
-        <div class="questions">
-            <h2>What date does is Lisa's birthday from the simpsons land on?</h2>
-            <ol id="guess">
-                <li href="wrong" class="btn">May 4th 1992</li>
-                <li href="right" class="btn">May 9th 1981</li>
-                <li href="wrong" class="btn">May 5th 1862</li>
-            </ol>
-        </div>
-    </section>
-    <section>
-        <div class="questions">
-            <h2></h2>
-            <ol id="guess">
 
-            </ol>
+    <!--First thing is the question section-->
+    <section>
+        <div id="bign">
+            <p> Click the "Begin" button to start.</p>
+        </div>
+        <div class="btn">
+            Begin
         </div>
     </section>
+
+    <!--Second part is the Multipul choice section-->
+    <Section id="qtion">
+            <div>
+                <h2>Question</h2>
+            </div>
+    </section>
+    <section id="choices" class ="question">
+        <div>
+            <label id="c1"></label>
+        </div>
+        <div>
+            <label id="c2"></label>
+        </div>
+        <div>
+            <laabel id="c3"></laabel>
+        </div>
+        <div>
+            <label id="c4"></label>
+        </div>
+    </section>
+
+        <!--last section is the correction section-->
     <Section>
         <div id="correction" class="rorw">
-            <p>Correct!</p>
-            <p>Wrong!</p>
+            <label id="crt"></label>
+            <label id="wrng"></label>
         </div>
     </Section>
+
+    <!--footer shows what happens when you do it wrong.-->
+    <footer>
+        Every wrong answer will result in -2 seconds!!!
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>

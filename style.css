@@ -35,7 +35,12 @@ header h2 {
     border: 5px;
     border-style: groove;
     border-color: black;
+    text-align: center;
 }
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 0.5rem 0 #333;
+  }
 .rorw {
     border-top: 1px;
     border-top-style: solid;
