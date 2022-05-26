@@ -1,11 +1,11 @@
 //timer variables
-var timerTic = document.querySelector(".timer");
+var timerTic = document.querySelector(".time");
 var timeInterval
 var timeRemaining
 var timeLeft = 60
-var start = document.querySelector(".btn")
+var start = document.querySelector(".bign")
 //question section variables
-var qsect = document.querySelector(".guess");
+var qsect = document.querySelector(".qtion");
 
 //Multipul Choice section variables
 var selection = document.querySelector(".choices");
@@ -21,7 +21,7 @@ var answer = document.querySelector(".correction");
 var timer = function () {
     timeInterval = setInterval(function () {
         timeLeft--;
-        timperTic.textContent = "Timer: " + timeLeft
+        timerTic.textContent = "Timer: " + timeLeft
         if (timeLeft === 0 || q >= questionBank.length) {
             clearInterval(timeInterval);
             finished()
@@ -49,8 +49,14 @@ var questionBank = [
     }
 ]
 
+
 // Event listeners
 start.addEventListener("click", function (event) {
-    timer();
-    showq();
+    timer()
+    showq()
+  });
+
+  start.addEventListener("click", function (event) {
+    var event = event.target;
+    compareAnswer(event.textContent.trim());
   });
