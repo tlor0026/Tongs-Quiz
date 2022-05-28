@@ -16,7 +16,10 @@ var choiceThree = document.querySelector("#c3");
 var q =0;
 
 //Correction section variables
-var answer = document.querySelector("#correction");
+var ans = document.querySelector("#correction");
+
+//Scoreboard Variables
+var score = document.querySelector("#scoreboard")
 
 //Timer Function
 var timer = function () {
@@ -46,7 +49,7 @@ var questionBank = [
     {
         qtion: "Which is has the biggest text?",
         selection: [ "H1", "H2", "H3"],
-        answer: "H3"
+        answer: "H1"
     },
     {   
         qtion: "The external JavaScript file must contain the <script> tag.",
@@ -61,25 +64,25 @@ var questionBank = [
     {   
         qtion: "What kind of bear is best?",
         selection: ["Black bear", "Beets", "Maybe", "Battlestar Galactica"],
-        answer: "black bear"
+        answer: "Black bear"
     },
     {   
         qtion: "What date does is Lisa's birthday from the simpsons land on?",
         selection: ["May 4th 1992", "May 9th 1981", "May 5th 1862"],
-        answer: "May 9th 1992"
+        answer: "May 9th 1981"
     },
 ];
-
+//This is what happens when you click the right/wrong answer
 function rightAnswer(event) {
     if (q >= questionBank.length) {
-      gameOver();
+      finished();
       clearInterval(timeInterval);
     } else {
       if (event === questionBank[q].answer) {
-        answer.textContent = "correct!"
+        ans.textContent = "correct!"
       } else {
         timeLeft -= 10;
-        answer.textContent = "wrong!"
+        ans.textContent = "wrong!"
       }
       score = timeLeft;
       q++;
@@ -90,19 +93,18 @@ function rightAnswer(event) {
     var event = event.target;
     rightAnswer(event.textContent.trim());
   });
+//when the quiz is over or you run out of time
 
+var finished = function () {
+
+}
+// 
 // Event listeners
 start.addEventListener("click", function() {
     timer();
     showq();
-    //start.classList.add("hide");
     start.remove(".btn");
     instruc.remove(".bign");
     //leaderBtn.style.display = "none";
     //scoreCard.classList.add("hide");
 });
-
-//selection.addEventListener("click", function(event) {
-    //var eventz = event.target;
-   // compareAnswer(eventz.textContent.trim());
-  //});
