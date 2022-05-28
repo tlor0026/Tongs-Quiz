@@ -1,30 +1,31 @@
 //timer variables
-var timerTic = document.querySelector(".time");
+var timerTic = document.querySelector("#timer");
 var timeInterval
 var timeRemaining
-var timeLeft = 60
-var start = document.querySelector(".bign")
+var timeLeft = 160
 //question section variables
-var qsect = document.querySelector(".qtion");
+var start = document.querySelector(".btn");
+var instruc = document.querySelector("#bign")
 
 //Multipul Choice section variables
-var selection = document.querySelector(".choices");
-var choiceOne = document.querySelector(".c1");
-var choiceTwo = document.querySelector(".c2");
-var choiceThree = document.querySelector(".c3");
+var qtion = document.querySelector("#qtion");
+var selection = document.querySelector("#choices");
+var choiceOne = document.querySelector("#c1");
+var choiceTwo = document.querySelector("#c2");
+var choiceThree = document.querySelector("#c3");
 var q =0;
 
 //Correction section variables
-var answer = document.querySelector(".correction");
+var answer = document.querySelector("#correction");
 
 //Timer Function
 var timer = function () {
     timeInterval = setInterval(function () {
         timeLeft--;
-        timerTic.textContent = "Timer: " + timeLeft
+        timerTic.textContent = "TIMER: " + timeLeft;
         if (timeLeft === 0 || q >= questionBank.length) {
             clearInterval(timeInterval);
-            finished()
+            //finished()
         }
     }, 1000);
 }
@@ -32,7 +33,7 @@ var timer = function () {
 //Showing question
 var showq = function () {
     if (q < questionBank.length) {
-        question.textContent = questionBank[q].qsect;
+        qtion.textContent = questionBank[q].qtion;
         choiceOne.textContent = questionBank[q].selection[0];
         choiceTwo.textContent = questionBank[q].selection[1];
         choiceThree.textContent = questionBank[q].selection[2];
@@ -43,20 +44,65 @@ var showq = function () {
 
 var questionBank = [
     {
-        qsect: "Which is has the biggest text?",
-        choices: ["H1", "H2", "H3"],
-        answer: "h1"
-    }
-]
+        qtion: "Which is has the biggest text?",
+        selection: [ "H1", "H2", "H3"],
+        answer: "H3"
+    },
+    {   
+        qtion: "The external JavaScript file must contain the <script> tag.",
+        selection: [ "True", "False", "Maybe",],
+        answer: "False"
+    },
+    {   
+        qtion: "What comes first in a HTML?",
+        selection: ["Body", "Head", "Meta Tags"],
+        answer: "Meta Tags"
+    },
+    {   
+        qtion: "What kind of bear is best?",
+        selection: ["Black bear", "Beets", "Maybe", "Battlestar Galactica"],
+        answer: "black bear"
+    },
+    {   
+        qtion: "What date does is Lisa's birthday from the simpsons land on?",
+        selection: ["May 4th 1992", "May 9th 1981", "May 5th 1862"],
+        answer: "May 9th 1992"
+    },
+];
 
+function rightAnswer(event) {
+    if (q >= questionBank.length) {
+      gameOver();
+      clearInterval(timeInterval);
+    } else {
+      if (event === questionBank[q].answer) {
+        answer.textContent = "correct!"
+      } else {
+        timeLeft -= 10;
+        answer.textContent = "wrong!"
+      }
+      score = timeLeft;
+      q++;
+      showq();
+    }
+  }
+ selection.addEventListener("click", function (event) {
+    var event = event.target;
+    rightAnswer(event.textContent.trim());
+  });
 
 // Event listeners
-start.addEventListener("click", function (event) {
-    timer()
-    showq()
-  });
+start.addEventListener("click", function() {
+    timer();
+    showq();
+    //start.classList.add("hide");
+    start.remove(".btn");
+    instruc.remove(".bign");
+    //leaderBtn.style.display = "none";
+    //scoreCard.classList.add("hide");
+});
 
-  start.addEventListener("click", function (event) {
-    var event = event.target;
-    compareAnswer(event.textContent.trim());
-  });
+//selection.addEventListener("click", function(event) {
+    //var eventz = event.target;
+   // compareAnswer(eventz.textContent.trim());
+  //});
