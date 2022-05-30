@@ -1,5 +1,8 @@
 Tongs Quiz
 
+Published page: https://tlor0026.github.io/Tongs-Quiz/
+Github: https://github.com/tlor0026/Tongs-Quiz.git
+
 USAGE:
 Looking to take a quick quiz? Here's your chance! My quiz includes 5 questions! Each question you answer wrong with deduct 2 seconds from the clock! Make sure you try your best as you'll be able to enter your name onto the leaderboard at the end!!
 
