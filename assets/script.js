@@ -63,7 +63,7 @@ var questionBank = [
         answer: "Black bear"
     },
     {
-        qtion: "What date does is Lisa's birthday from the simpsons land on?",
+        qtion: "What date is Lisa's birthday from the simpsons land on?",
         selection: ["May 4th 1992", "May 9th 1981", "May 5th 1862"],
         answer: "May 9th 1981"
     },
