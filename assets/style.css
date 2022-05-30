@@ -2,6 +2,7 @@ body {
     margin: 0 auto;
     width: 600px;
     height: 600px;
+    background-color: grey;
 }
 
 header {
@@ -17,15 +18,39 @@ header {
     flex-wrap: wrap;
     display: flex;
 }
+
 header h2 {
     text-align: right;
 }
 
-.questions {
+.qass {
+    display: none;
+    background-color: aqua;
+    margin: 10px;
+    padding: 10px;
+    border: 5px;
+    border-style: groove;
+    border-color: black;
+    text-align: center;
+
 }
 
-.questions ol{
-    list-style-position: inside;
+.question {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.ui {
+    display: none;
+}
+
+.lead {
+    display: none;
+}
+
+.dofirst {
+    display: block;
 }
 
 .btn {
@@ -37,10 +62,12 @@ header h2 {
     border-color: black;
     text-align: center;
 }
+
 .btn:hover {
     cursor: pointer;
     box-shadow: 0 0.5rem 0.5rem 0 #333;
-  }
+}
+
 .rorw {
     border-top: 1px;
     border-top-style: solid;
@@ -50,3 +77,18 @@ header h2 {
 .rorw p {
     text-align: center;
 }
+
+.scores {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+

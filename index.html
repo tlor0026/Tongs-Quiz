@@ -6,50 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tongs Quiz</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
     <!--Header shows high score button and timer-->
     <header>
-        <h1>Tong's Quiz</h1>
+        <h2  type="button">Tong's Quiz</h2>
         <div>
             <h2 id="timer">Timer:</h2>
             <div>
     </header>
 
     <!--First thing is the question section-->
-    <section>
+    <section class=dofirst>
         <div id="bign">
             <p> Click the "Begin" button to start.</p>
         </div>
-        <div class="btn" type="button">
+        <div class="btn" id="here1" type="button">
             Begin
         </div>
     </section>
 
     <!--Second part is the Multipul choice section-->
-    <Section id="qtion">
-            <div>
-                <h2>Question</h2>
-            </div>
+    <Section id="qtion" class="qass">
+        <div>
+            <h2>Question</h2>
+        </div>
     </section>
-    <section id="choices" class ="question">
+    <section id="choices" class="question">
         <div>
-            <label id="c1"></label>
+            <label id="c1" class="qsst"></label>
         </div>
         <div>
-            <label id="c2"></label>
+            <label id="c2" class="qsst"></label>
         </div>
         <div>
-            <laabel id="c3"></laabel>
+            <laabel id="c3" class="qsst"></laabel>
         </div>
         <div>
-            <label id="c4"></label>
+            <label id="c4" class="qsst"></label>
         </div>
     </section>
 
-        <!--last section is the correction section-->
+    <!--last section is the correction section-->
     <Section>
         <div id="correction" class="rorw">
             <label id="crt"></label>
@@ -57,20 +57,28 @@
         </div>
     </Section>
     <!--local storage: scoreboard-->
-<section>
-    <div id="scoreboard">
-    <h2 id="score" class="scores"></h2>
-    <form>
-      <label for="initial">Enter name</label><br>
-      <input id="initial" type="text" maxlength="10"><br>
-      <input id="sub" type="submit">
-    </form>
-</div>
-</section>
+    <section id="userinfo" class="ui">
+        <div id="username">
+            <h2 id="score" class="scores"></h2>
+            <form>
+                <label for="initial">Enter name</label><br>
+                <input id="name" type="text" maxlength="10" /><br>
+                <button id="sub" type="button">submit</button>
+            </form>
+        </div>
+    </section>
+    <!--leaderboard section-->
+    <section id="leaderboard" class="lead">
+        <h1>Leaderboard</h1>
+        <div id="stats">stats</div>
+        <button id="strtovr">Start Over</button>
+        <button id="clr">Clear</button>
+    </section>
     <!--footer shows what happens when you do it wrong.-->
     <footer>
-        Every wrong answer will result in -2 seconds!!!
+        <h3>Every wrong answer will result in -2 seconds!!!</h3>
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
+
 </html>
